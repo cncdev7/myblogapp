@@ -1,0 +1,10 @@
+/your_project
+    /static
+        /css
+            style.css
+    /templates
+        home.html
+        login.html
+        register.html
+        dashboard.html
+    app.py

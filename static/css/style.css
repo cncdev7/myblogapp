@@ -1,0 +1,184 @@
+/* Umumiy o'zgarishlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+
+/* Navbar umumiy uslubi */
+.navbar {
+    display: flex;
+    justify-content: center; /* Barcha navbar elementlarini markazlashtiradi */
+    align-items: center;
+    background-color: #3498db; /* Bir xil rang */
+    padding: 10px 0;
+    margin: 0;
+    
+}
+
+/* Navbar havolalari (link) */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0 15px; /* Elementlar orasidagi masofa */
+    transition: color 0.3s ease;
+}
+
+/* Navbar hover effekti */
+.navbar a:hover {
+    color: #ffd700; /* Oltin rang */
+}
+
+/* Responsive dizayn */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Mobil uchun vertikal joylashuv */
+    }
+    .navbar a {
+        margin: 10px 0; /* Vertikal joylashuvda masofa */
+        font-size: 16px;
+    }
+}
+
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Home va postlar */
+.content {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.post-preview {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-preview:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-preview h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-preview p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.post-preview a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-preview a:hover {
+    color: #0056b3;
+}
+
+/* Post ko'rinish */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Formalarni dizayn qilish */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+form textarea {
+    height: 200px;
+}
+
+/* Boshqa sahifalar uchun */
+h1, h2, h3 {
+    color: #333;
+}
+
+.post-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Responsive dizayn */
+@media (max-width: 768px) {
+    .content {
+        width: 95%;
+    }
+
+    .navbar a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .post-preview h2 {
+        font-size: 20px;
+    }
+
+    .post-preview p {
+        font-size: 14px;
+    }
+}

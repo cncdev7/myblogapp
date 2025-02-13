@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard</title>
+     <style>
+        /* Umumiy dizayn */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9; /* Yengil kulrang fon */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar dizayni */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db; /* Ko'k rang */
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Navbarni yuqori qilish */
+}
+
+/* Navbar havolalari */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 20px; /* Elementlar orasidagi masofa */
+    transition: color 0.3s ease;
+}
+
+/* Navbar hover effekti */
+.navbar a:hover {
+    color: #ffd700; /* Oltin rang */
+}
+
+/* Dashboard kontent */
+.dashboard-content {
+    margin-top: 80px; /* Navbar ostida joylashishi uchun */
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Dashboard nomi */
+.dashboard-content h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Post qo'shish formasi */
+form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #3498db; /* Fokusda ko'k rang */
+}
+
+/* Submit tugmasi */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db; /* Ko'k rang */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2980b9; /* Hoverda tugma rangini o'zgartirish */
+}
+
+/* Foydalanuvchi postlarini ko'rsatish */
+h3 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 40px;
+}
+
+.post {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h4 {
+    font-size: 20px;
+    color: #3498db;
+}
+
+.post p {
+    font-size: 16px;
+    color: #555;
+}
+
+     </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="dashboard-content">
+        <h2>Boshqaruv panelingizga xush kelibsiz!</h2>
+        <p>Blog postlaringizni shu yerda yarating va boshqaring.</p>
+
+        <!-- Post qo'shish formasi -->
+        <form action="/dashboard" method="POST">
+            <label for="title">Post sarlavhasi</label>
+            <input type="text" name="title" required>
+            <label for="content">Post tarkibi</label>
+            <textarea name="content" rows="5" required></textarea>
+            <button type="submit">Post yaratish</button>
+        </form>
+
+        <!-- Foydalanuvchi postlarini ko'rsatish -->
+        <h3>Sizning xabarlaringiz</h3>
+        {% for post in posts %}
+            <div class="post">
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
